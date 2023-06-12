@@ -53,7 +53,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Th&#xf4;ng tin">
+            <TitledBorder title="Infomation">
               <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
@@ -72,11 +72,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i th&#x1ebb;:"/>
+            <Property name="text" type="java.lang.String" value="Card type:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="220" width="70" height="24"/>
+              <AbsoluteConstraints x="150" y="220" width="90" height="24"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -98,11 +98,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#x1ed1; th&#x1ebb;:"/>
+            <Property name="text" type="java.lang.String" value="Card Number:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="70" width="51" height="25"/>
+              <AbsoluteConstraints x="150" y="70" width="110" height="25"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -111,11 +111,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n:"/>
+            <Property name="text" type="java.lang.String" value="Full Name:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="120" width="51" height="-1"/>
+              <AbsoluteConstraints x="150" y="120" width="80" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -124,7 +124,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh:"/>
+            <Property name="text" type="java.lang.String" value="Date of birth:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -153,7 +153,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#x1edd;i h&#x1ea1;n:"/>
+            <Property name="text" type="java.lang.String" value="Expired:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -166,11 +166,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="S&#x1ed1; d&#x1b0;:"/>
+            <Property name="text" type="java.lang.String" value="Balance:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="150" y="320" width="-1" height="-1"/>
+              <AbsoluteConstraints x="150" y="320" width="70" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -200,7 +200,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="60" width="170" height="-1"/>
+              <AbsoluteConstraints x="250" y="60" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -210,7 +210,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="110" width="170" height="-1"/>
+              <AbsoluteConstraints x="250" y="110" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -220,7 +220,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="160" width="170" height="-1"/>
+              <AbsoluteConstraints x="250" y="160" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -230,7 +230,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="210" width="170" height="-1"/>
+              <AbsoluteConstraints x="250" y="210" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -240,7 +240,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="260" width="170" height="-1"/>
+              <AbsoluteConstraints x="250" y="260" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -250,7 +250,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="310" width="110" height="-1"/>
+              <AbsoluteConstraints x="250" y="310" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -263,7 +263,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Ca&#x301;c ch&#x1b0;&#x301;c n&#x103;ng chi&#x301;nh">
+            <TitledBorder title="Main functions">
               <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
@@ -279,7 +279,7 @@
       <SubComponents>
         <Component class="custom.MyButton" name="btn_changePIN">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Thay &#x111;&#xf4;&#x309;i ma&#x303; pin"/>
+            <Property name="text" type="java.lang.String" value="Change PIN"/>
             <Property name="radius" type="int" value="50"/>
           </Properties>
           <Events>
@@ -293,7 +293,7 @@
         </Component>
         <Component class="custom.MyButton" name="btn_capnhat">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C&#xe2;&#x323;p nh&#xe2;&#x323;t th&#xf4;ng tin"/>
+            <Property name="text" type="java.lang.String" value="Edit Information"/>
             <Property name="radius" type="int" value="50"/>
           </Properties>
           <Events>
@@ -307,7 +307,7 @@
         </Component>
         <Component class="custom.MyButton" name="Btn_thayanh">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Thay a&#x309;nh"/>
+            <Property name="text" type="java.lang.String" value="Change Image"/>
             <Property name="radius" type="int" value="50"/>
           </Properties>
           <Constraints>
@@ -318,7 +318,7 @@
         </Component>
         <Component class="custom.MyButton" name="btn_thanhtoan">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Thanh toa&#x301;n"/>
+            <Property name="text" type="java.lang.String" value="Check out"/>
             <Property name="radius" type="int" value="50"/>
           </Properties>
           <Constraints>
@@ -329,7 +329,7 @@
         </Component>
         <Component class="custom.MyButton" name="bnt_naptien">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Na&#x323;p ti&#xea;&#x300;n"/>
+            <Property name="text" type="java.lang.String" value="Recharge"/>
             <Property name="radius" type="int" value="50"/>
           </Properties>
           <Constraints>

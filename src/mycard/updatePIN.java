@@ -49,7 +49,7 @@ public class updatePIN extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Thay đổi mã PIN");
+        jLabel1.setText("Change PIN");
 
         btn_ChangePin.setText("OK");
         btn_ChangePin.addActionListener(new java.awt.event.ActionListener() {
@@ -59,13 +59,13 @@ public class updatePIN extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel2.setText("Mã PIN:");
+        jLabel2.setText("Old PIN:");
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel3.setText("Mã PIN mới:");
+        jLabel3.setText("New PIN:");
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel4.setText("Nhập lại mã PIN mới:");
+        jLabel4.setText("Confirm New PIN:");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mycard/icon/images.png"))); // NOI18N
 
@@ -76,7 +76,7 @@ public class updatePIN extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(66, 66, 66)
+                .addGap(104, 104, 104)
                 .addComponent(jLabel5))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(243, 243, 243)
@@ -104,7 +104,7 @@ public class updatePIN extends javax.swing.JFrame {
                         .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(39, 39, 39)))
+                        .addGap(44, 44, 44)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txt_pinnow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

@@ -75,39 +75,39 @@ public class userForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel_info.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel_info.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Thông tin", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel_info.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Infomation", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel_info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel7.setText("Loại thẻ:");
-        jPanel_info.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 70, 24));
+        jLabel7.setText("Card type:");
+        jPanel_info.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, 24));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("THẺ XE BUÝT");
         jPanel_info.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 144, 36));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel2.setText("Số thẻ:");
-        jPanel_info.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 51, 25));
+        jLabel2.setText("Card Number:");
+        jPanel_info.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 110, 25));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel5.setText("Họ tên:");
-        jPanel_info.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 51, -1));
+        jLabel5.setText("Full Name:");
+        jPanel_info.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 80, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel6.setText("Ngày sinh:");
+        jLabel6.setText("Date of birth:");
         jPanel_info.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, 20));
 
         anhthe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 255)));
         jPanel_info.add(anhthe, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, 170));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel4.setText("Thời hạn:");
+        jLabel4.setText("Expired:");
         jPanel_info.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel8.setText("Số dư:");
-        jPanel_info.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
+        jLabel8.setText("Balance:");
+        jPanel_info.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 70, -1));
         jPanel_info.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -115,28 +115,28 @@ public class userForm extends javax.swing.JFrame {
         jPanel_info.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
         txt_sothe.setEditable(false);
-        jPanel_info.add(txt_sothe, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 170, -1));
+        jPanel_info.add(txt_sothe, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 170, -1));
 
         txt_hoten.setEditable(false);
-        jPanel_info.add(txt_hoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 170, -1));
+        jPanel_info.add(txt_hoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 170, -1));
 
         txt_ngaysinh.setEditable(false);
-        jPanel_info.add(txt_ngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 170, -1));
+        jPanel_info.add(txt_ngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 170, -1));
 
         txt_loaithe.setEditable(false);
-        jPanel_info.add(txt_loaithe, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 170, -1));
+        jPanel_info.add(txt_loaithe, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 170, -1));
 
         txt_thoihan.setEditable(false);
-        jPanel_info.add(txt_thoihan, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 170, -1));
+        jPanel_info.add(txt_thoihan, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 170, -1));
 
         txt_sodu.setEditable(false);
-        jPanel_info.add(txt_sodu, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 110, -1));
+        jPanel_info.add(txt_sodu, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 110, -1));
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Các chức năng chính", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Main functions", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_changePIN.setText("Thay đổi mã pin");
+        btn_changePIN.setText("Change PIN");
         btn_changePIN.setRadius(50);
         btn_changePIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,7 +145,7 @@ public class userForm extends javax.swing.JFrame {
         });
         jPanel5.add(btn_changePIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 120, 50));
 
-        btn_capnhat.setText("Cập nhật thông tin");
+        btn_capnhat.setText("Edit Information");
         btn_capnhat.setRadius(50);
         btn_capnhat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,15 +154,15 @@ public class userForm extends javax.swing.JFrame {
         });
         jPanel5.add(btn_capnhat, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 130, 50));
 
-        Btn_thayanh.setText("Thay ảnh");
+        Btn_thayanh.setText("Change Image");
         Btn_thayanh.setRadius(50);
         jPanel5.add(Btn_thayanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 153, 120, 50));
 
-        btn_thanhtoan.setText("Thanh toán");
+        btn_thanhtoan.setText("Check out");
         btn_thanhtoan.setRadius(50);
         jPanel5.add(btn_thanhtoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 153, 130, 50));
 
-        bnt_naptien.setText("Nạp tiền");
+        bnt_naptien.setText("Recharge");
         bnt_naptien.setRadius(50);
         jPanel5.add(bnt_naptien, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 110, 50));
 
