@@ -43,7 +43,7 @@ import javax.swing.JTextField;
  */
 public class BusForm extends javax.swing.JFrame {
     static info info;
-     static DBConnection db;
+    static DBConnection db;
     static theBus thebus;
     private Boolean input= false;
     static boolean cardready= false;
@@ -52,7 +52,7 @@ public class BusForm extends javax.swing.JFrame {
     static byte[] rsaPubKey = new byte[256];
     private int soid=0;
     private int saipin= 3;
-      BufferedImage c;
+     static BufferedImage c;
     /**
      * Creates new form SCForm
      */
@@ -387,10 +387,13 @@ public int check_pin(String pin) {
                 setCommandAPDU(cmd, (byte) lc, data, (byte) 0);
                 thebus.sendAPDUtoApplet(cmd, data);
                 rsaPubKey = thebus.resAPDU.getData();
+                info.setRsaPubKey(rsaPubKey);
+                
                 int le = thebus.resAPDU.getNr();
                 setResponseAPDU(rsaPubKey, (byte) le);//hien thi du lieu phan hoi tu applet
                 if (thebus.resAPDU.getSW1() == 0x90) {
                     JOptionPane.showMessageDialog(this, "Lưu thông tin thành công");
+                    db.insert(info);
                     input = true;
                 } else {
                     JOptionPane.showMessageDialog(this, "Lỗi! Hãy khởi tạo lại thông tin");
@@ -591,7 +594,7 @@ public int check_pin(String pin) {
             
         });
     }
-    private void setImage(byte [] img){
+    public static void setImage(byte [] img){
         if(img == null) return;
         byte[] cmd = {(byte) 0xA0, (byte) 0x12, (byte) 0x01, (byte) 0x00};
         thebus.sendAPDUtoApplet(cmd);
@@ -613,7 +616,7 @@ public int check_pin(String pin) {
 //        byte[] cmd_encrypt = {(byte) 0xA0, (byte) 0x12, (byte) 0x03, (byte) 0x00};
 //        thebus.sendAPDUtoApplet(cmd_encrypt);
     }
-    private void getImage(byte [] img) throws IOException{
+    public static void getImage(byte [] img) throws IOException{
          if(img == null) return;
          //        byte[] cmd_decrypt = {(byte) 0xA0, (byte) 0x13, (byte) 0x03, (byte) 0x00};
 //        thebus.sendAPDUtoApplet(cmd_decrypt);
@@ -641,7 +644,23 @@ System.out.println("ảnh res:" +resimg);
        
     }
     
-   
+   static String randomString(int n)
+    {
+        // chose a Character random from this String
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvxyz";
+                               
+        // create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(n);
+  
+        for (int i = 0; i < n; i++) {
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index = (int)(AlphaNumericString.length() * Math.random());
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString.charAt(index));
+        }
+        return sb.toString();
+    }
     private void setnull(){
       
     }

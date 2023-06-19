@@ -7,11 +7,14 @@ package mycard;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -156,6 +159,11 @@ public class userForm extends javax.swing.JFrame {
 
         Btn_thayanh.setText("Change Image");
         Btn_thayanh.setRadius(50);
+        Btn_thayanh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_thayanhActionPerformed(evt);
+            }
+        });
         jPanel5.add(Btn_thayanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 153, 120, 50));
 
         btn_thanhtoan.setText("Check out");
@@ -204,6 +212,31 @@ public class userForm extends javax.swing.JFrame {
         updateinfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);  
         setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_btn_capnhatActionPerformed
+
+    private void Btn_thayanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_thayanhActionPerformed
+        JFileChooser fc = new JFileChooser();
+        int returnValue = fc.showOpenDialog(this);
+        if(returnValue == JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+            BufferedImage bimage;
+            try{
+                bimage = ImageIO.read(file);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                ImageIO.write(bimage, "jpg", baos);
+                byte[] img = baos.toByteArray();
+                if(img.length > 128000)
+                {
+                    JOptionPane.showMessageDialog(this, "Ảnh bạn chọn lớn hơn kích thước tối đa (128Kb), có thể xảy ra lỗi!\nHãy chọn ảnh khác!", "Warning!!!", JOptionPane.WARNING_MESSAGE);
+                }else{
+                    BusForm.setImage(img);
+                    BusForm.getImage(img);
+                    info.setAvatar(img);
+                    JOptionPane.showMessageDialog(this, "Thay ảnh thành công.");
+                }
+            }catch(IOException e){
+                e.printStackTrace();
+            }}
+    }//GEN-LAST:event_Btn_thayanhActionPerformed
 
     /**
      * @param args the command line arguments

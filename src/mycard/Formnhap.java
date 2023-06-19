@@ -62,7 +62,6 @@ public class Formnhap extends javax.swing.JFrame {
         txt_hoten = new custom.TextField();
         sd = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txt_loaithe = new custom.TextField();
         txt_thoihan = new custom.TextField();
         txt_pin = new custom.PasswordField();
         txt_checkpin = new custom.PasswordField();
@@ -73,6 +72,7 @@ public class Formnhap extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txt_ns = new com.toedter.calendar.JDateChooser();
         anh = new javax.swing.JLabel();
+        cbLoaithe = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
@@ -115,12 +115,6 @@ public class Formnhap extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("Confirm PIN:");
 
-        txt_loaithe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_loaitheActionPerformed(evt);
-            }
-        });
-
         txt_thoihan.setEditable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -154,10 +148,21 @@ public class Formnhap extends javax.swing.JFrame {
         anh.setText("3x4");
         anh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        cbLoaithe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vip", "Normal", " " }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(270, 270, 270))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(Button_getava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,24 +178,20 @@ public class Formnhap extends javax.swing.JFrame {
                         .addComponent(txt_checkpin, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_pin, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                            .addComponent(txt_loaithe, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                            .addComponent(txt_hoten, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                            .addComponent(txt_ns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_thoihan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txt_pin, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                .addComponent(txt_hoten, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                .addComponent(txt_ns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txt_thoihan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cbLoaithe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addComponent(anh, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(270, 270, 270))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Button_getava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(214, 214, 214)
+                .addComponent(txt_sothe, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addGap(243, 243, Short.MAX_VALUE)
@@ -199,24 +200,24 @@ public class Formnhap extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(38, 38, 38)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(txt_sothe, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(83, 83, Short.MAX_VALUE)))
+                    .addContainerGap(481, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                        .addGap(45, 45, 45)
+                        .addComponent(txt_sothe, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_hoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addGap(24, 24, 24)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txt_loaithe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(24, 24, 24)
+                            .addComponent(jLabel4)
+                            .addComponent(cbLoaithe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addComponent(txt_ns, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -245,10 +246,8 @@ public class Formnhap extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jLabel1)
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel6)
-                        .addComponent(txt_sothe, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(27, 27, 27)
+                    .addComponent(jLabel6)
                     .addContainerGap(482, Short.MAX_VALUE)))
         );
 
@@ -307,16 +306,12 @@ public class Formnhap extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_hotenActionPerformed
 
-    private void txt_loaitheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_loaitheActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_loaitheActionPerformed
-
     private void btn_okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_okActionPerformed
          char[] ch =txt_pin.getPassword();
         String pin = new String(ch); 
         char[] ch1 =txt_pin.getPassword();
         String checkpin =new String(ch1);
-        if(txt_sothe.getText().equals("") || txt_hoten.getText().equals("") || txt_ns.getDate()==null|| txt_loaithe.getText().equals("") ||txt_thoihan.getText().equals("")|| txt_pin.getPassword().equals("")|| txt_checkpin.getPassword().equals("")){
+        if(txt_sothe.getText().equals("") || txt_hoten.getText().equals("") || txt_ns.getDate()==null||txt_thoihan.getText().equals("")|| txt_pin.getPassword().equals("")|| txt_checkpin.getPassword().equals("")){
             JOptionPane.showMessageDialog(this, "Tất cả các trường không được để trống!");
         }else if (pin.length() !=6 ){
             JOptionPane.showMessageDialog(this, "độ dài PIN từ 6-20 ký tự.");
@@ -329,7 +324,7 @@ public class Formnhap extends javax.swing.JFrame {
         String ngaysinh = sdf.format(txt_ns.getDate());
         
        
-        String loaithe = txt_loaithe.getText();
+        String loaithe = (String) cbLoaithe.getSelectedItem();
         info.setSothe(sothe);
         info.setHoten(hoten);
         info.setNgaysinh(ngaysinh);
@@ -338,10 +333,8 @@ public class Formnhap extends javax.swing.JFrame {
         info.setPin(pin);
         BusForm.info = this.info;
         JOptionPane.showMessageDialog(null, "Khởi tạo nội dung thẻ thành công.");
-        //BusForm.db.insert(info);
         txt_sothe.setText("");
         txt_hoten.setText("");
-        txt_loaithe.setText("");
         txt_thoihan.setText("");
         txt_pin.setText("");
         txt_checkpin.setText("");
@@ -376,6 +369,7 @@ public class Formnhap extends javax.swing.JFrame {
     private custom.MyButton Button_getava;
     private javax.swing.JLabel anh;
     private custom.MyButton btn_ok;
+    private javax.swing.JComboBox<String> cbLoaithe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -388,7 +382,6 @@ public class Formnhap extends javax.swing.JFrame {
     private javax.swing.JLabel sd;
     private custom.PasswordField txt_checkpin;
     private custom.TextField txt_hoten;
-    private custom.TextField txt_loaithe;
     private com.toedter.calendar.JDateChooser txt_ns;
     private custom.PasswordField txt_pin;
     private javax.swing.JLabel txt_sothe;

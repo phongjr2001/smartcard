@@ -11,7 +11,8 @@ package mycard;
  */
 public class info {
     private String sothe, hoten, ngaysinh, loaithe, pin, thoihan;
-    private byte[] avatar;
+   private static byte[] rsaPubKey = new byte[256];
+    private static byte[] avatar;
     public info(String sothe, String hoten, String ngaysinh, String loaithe, String thoihan,String pin,byte[] avatar) {
         this.sothe = sothe;
         this.hoten = hoten;
@@ -25,12 +26,22 @@ public class info {
         
     }
 
+    public static byte[] getRsaPubKey() {
+        return rsaPubKey;
+    }
+
+    public static void setRsaPubKey(byte[] rsaPubKey) {
+        info.rsaPubKey = rsaPubKey;
+    }
+
+   
+
     public byte[] getAvatar() {
         return avatar;
     }
 
-    public void setAvatar(byte[] avatar) {
-        this.avatar = avatar;
+    public static void setAvatar(byte[] avatar) {
+       info.avatar=avatar;
     }
 
     public String getSothe() {

@@ -47,18 +47,19 @@ public class DBConnection {
          try {
             // TODO add your handling code here:
         
-            pst = sqlconn.prepareStatement("insert into smartcard(id, hoten, ngaysinh, loaithe,pin,thoihan) value(?,?,?,?,?,?)");
+            pst = sqlconn.prepareStatement("insert into smartcard(id, hoten, ngaysinh, loaithe,pin,thoihan,publickey) value(?,?,?,?,?,?,?)");
             pst.setString(1, infor.getSothe());
             pst.setString(2, infor.getHoten());
             pst.setString(3, infor.getNgaysinh());
             pst.setString(4, infor.getLoaithe());
-             pst.setString(5, infor.getPin());
-              pst.setString(6, infor.getThoihan());
-             pst.executeUpdate();
+            pst.setString(5, infor.getPin());
+            pst.setString(6, infor.getThoihan());
+            pst.setBytes(7, infor.getRsaPubKey());
+            pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "đã hoàn thành việc thêm mới");
             
         } catch (SQLException ex) {
-            
+             System.err.println("Ket noi that bai "+ ex.getMessage());
         }
     }
 }
