@@ -551,7 +551,39 @@ public int check_pin(String pin) {
             }else JOptionPane.showMessageDialog(this, "Bạn đã nhập sai quá số lần cho phép. Thẻ đã bị khóa!");
         }else JOptionPane.showMessageDialog(this, "Thẻ chưa sẵn sàng");         // TODO add your handling code here:
     }//GEN-LAST:event_btnXemttActionPerformed
-
+static boolean verify(byte[] pubkey, byte[] MXT, byte [] sigbuffer){
+        boolean result=false;
+        try{
+        byte[] mudulus = new byte[128];
+        byte[] exponent= new byte[3];
+        System.arraycopy(pubkey, 0, mudulus, 0, 128);
+        System.arraycopy(pubkey, 128, exponent, 0, 3);
+        String temp = "";
+        for (int i = 0; i < exponent.length; i++) {
+            temp += thebus.byteToHex(exponent[i]);
+            temp += "";
+        }
+        String temp2 = "";
+        for (int i = 0; i < mudulus.length; i++) {
+            temp2 += thebus.byteToHex(mudulus[i]);
+            temp2 += "";
+        }
+        Signature s = Signature.getInstance("SHA1WithRSA");
+	KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+        BigInteger ModulusInteger = new BigInteger(temp2,16);
+        BigInteger ExponentInteger = new BigInteger(temp,16);
+        RSAPublicKeySpec receiverPublicKeySpec = new RSAPublicKeySpec(ModulusInteger, ExponentInteger);
+        PublicKey publicKey = keyFactory.generatePublic(receiverPublicKeySpec);
+        s.initVerify(publicKey);
+        // Nạp message vào đối tượng Signuture
+        s.update(MXT);
+        // Kết quả kiểm chứng
+        result = s.verify(sigbuffer);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return result;
+}
     private void txt_pinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_pinActionPerformed

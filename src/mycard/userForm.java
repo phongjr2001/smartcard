@@ -172,6 +172,11 @@ public class userForm extends javax.swing.JFrame {
 
         bnt_naptien.setText("Recharge");
         bnt_naptien.setRadius(50);
+        bnt_naptien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnt_naptienActionPerformed(evt);
+            }
+        });
         jPanel5.add(bnt_naptien, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 110, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,6 +242,12 @@ public class userForm extends javax.swing.JFrame {
                 e.printStackTrace();
             }}
     }//GEN-LAST:event_Btn_thayanhActionPerformed
+
+    private void bnt_naptienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bnt_naptienActionPerformed
+        ReCharge naptien = new ReCharge();
+                naptien.setVisible(true);
+                naptien.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_bnt_naptienActionPerformed
 
     /**
      * @param args the command line arguments
