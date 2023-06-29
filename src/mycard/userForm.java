@@ -168,6 +168,11 @@ public class userForm extends javax.swing.JFrame {
 
         btn_thanhtoan.setText("Check out");
         btn_thanhtoan.setRadius(50);
+        btn_thanhtoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_thanhtoanActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn_thanhtoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 153, 130, 50));
 
         bnt_naptien.setText("Recharge");
@@ -248,6 +253,12 @@ public class userForm extends javax.swing.JFrame {
                 naptien.setVisible(true);
                 naptien.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_bnt_naptienActionPerformed
+
+    private void btn_thanhtoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_thanhtoanActionPerformed
+         Checkout thanhtoan = new Checkout();
+                thanhtoan.setVisible(true);
+                thanhtoan.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_btn_thanhtoanActionPerformed
 
     /**
      * @param args the command line arguments

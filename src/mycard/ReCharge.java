@@ -167,13 +167,7 @@ public class ReCharge extends javax.swing.JFrame {
                 updatebalance[1] = Byte.valueOf(tach[1],16);
                 updatebalance[2] = Byte.valueOf(tach[2],16);
             }
-            if(st.length() == 4){
-                String[] tach = st.split("",4);
-                updatebalance[0] = Byte.valueOf(tach[0],16);
-                updatebalance[1] = Byte.valueOf(tach[1],16);
-                updatebalance[2] = Byte.valueOf(tach[2],16);
-                updatebalance[3] = Byte.valueOf(tach[3],16);
-            }
+            
             thebus.sendAPDUtoApplet(cmdupdate, updatebalance);
             byte[] res= thebus.resAPDU.getData();
             if (res[0] == 0x01){
@@ -181,7 +175,7 @@ public class ReCharge extends javax.swing.JFrame {
                 setVisible(false);
                 busdForm.cardready = false;
             }else{
-                JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Số tiền giao dịch tối đa là 10.000.000VND");
+                JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Số tiền giao dịch tối đa là 1.000.000VND");
             }
         }else{
                 JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Xác thực lỗi");

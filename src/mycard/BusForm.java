@@ -502,7 +502,13 @@ public int check_pin(String pin) {
  if(connected == true && input== true && khoitao == true){
            String pin = Arrays.toString(txt_pin.getPassword()); // Chuỗi ban đầu: "[1,2,3]"
             pin = pin.replaceAll("\\D", ""); // Chỉ giữ lại các chữ số
-
+             byte[] cmdcreateSig = {(byte) 0xA0, (byte) 0x22, (byte) 0x00, (byte) 0x00};
+        String mxt = randomString(10);
+        byte[] chuoiky = mxt.getBytes();
+        thebus.sendAPDUtoApplet(cmdcreateSig,chuoiky);
+        byte[] sigbuf = thebus.resAPDU.getData();
+        boolean result = verify(rsaPubKey, mxt.getBytes(), sigbuf);
+            if(result == true){
             if(pin.length() != 6){
                 JOptionPane.showMessageDialog(this, "Mã PIN gồm 6 kí tự");
             }
@@ -519,11 +525,11 @@ public int check_pin(String pin) {
                    getImage(info.getAvatar());
                    byte[] cmd = {(byte) 0xA0, (byte) 0x11, (byte) 0x00, (byte) 0x00};
                    byte[] data= {0};
-                   setCommandAPDU(cmd,(byte)0, data, (byte)0);//hien thi apdu cmd len GUI
+                   setCommandAPDU(cmd,(byte)0, data, (byte)0);
                    thebus.sendAPDUtoApplet(cmd);
                    byte[] dataRes = thebus.resAPDU.getData();
                    int le = thebus.resAPDU.getNr();
-                   setResponseAPDU(dataRes, (byte)le);//hien thi du lieu phan hoi tu applet
+                   setResponseAPDU(dataRes, (byte)le);
                    String tach = new String(dataRes) ;
                    //System.out.print("a:"+tach);
                    String[] a = tach.split(":");
@@ -549,7 +555,8 @@ public int check_pin(String pin) {
                    Logger.getLogger(BusForm.class.getName()).log(Level.SEVERE, null, ex);
                }
             }else JOptionPane.showMessageDialog(this, "Bạn đã nhập sai quá số lần cho phép. Thẻ đã bị khóa!");
-        }else JOptionPane.showMessageDialog(this, "Thẻ chưa sẵn sàng");         // TODO add your handling code here:
+        }else JOptionPane.showMessageDialog(this, "Thẻ chưa sẵn sàng");   
+ }// TODO add your handling code here:
     }//GEN-LAST:event_btnXemttActionPerformed
 static boolean verify(byte[] pubkey, byte[] MXT, byte [] sigbuffer){
         boolean result=false;
@@ -646,11 +653,11 @@ static boolean verify(byte[] pubkey, byte[] MXT, byte [] sigbuffer){
             }
         }
 //        byte[] cmd_encrypt = {(byte) 0xA0, (byte) 0x12, (byte) 0x03, (byte) 0x00};
-//        thebus.sendAPDUtoApplet(cmd_encrypt);
+//       thebus.sendAPDUtoApplet(cmd_encrypt);
     }
     public static void getImage(byte [] img) throws IOException{
          if(img == null) return;
-         //        byte[] cmd_decrypt = {(byte) 0xA0, (byte) 0x13, (byte) 0x03, (byte) 0x00};
+//       byte[] cmd_decrypt = {(byte) 0xA0, (byte) 0x13, (byte) 0x03, (byte) 0x00};
 //        thebus.sendAPDUtoApplet(cmd_decrypt);
 byte[] cmd = {(byte) 0xA0, (byte) 0x13, (byte) 0x01, (byte) 0x00};
 thebus.sendAPDUtoApplet(cmd);

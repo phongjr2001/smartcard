@@ -45,12 +45,11 @@ public class Checkout extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtMoney = new custom.TextField();
         txtpin = new custom.PasswordField();
-        jLabel4 = new javax.swing.JLabel();
         btnThanhtoan = new custom.MyButton();
+        rdLuot = new javax.swing.JRadioButton();
+        rdThang = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,14 +58,8 @@ public class Checkout extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel1.setText("Checkout");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel2.setText("Money :");
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel3.setText("PIN :");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel4.setText("000 vnd");
 
         btnThanhtoan.setText("OK");
         btnThanhtoan.addActionListener(new java.awt.event.ActionListener() {
@@ -75,43 +68,46 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
 
+        rdLuot.setText("Vé lượt");
+
+        rdThang.setText("Vé tháng");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtpin, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addComponent(txtpin, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnThanhtoan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(170, 170, 170))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(161, 161, 161))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdThang, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(161, 161, 161))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(rdLuot, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(148, 148, 148)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtMoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(25, 25, 25)
+                .addGap(32, 32, 32)
+                .addComponent(rdLuot)
+                .addGap(15, 15, 15)
+                .addComponent(rdThang)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtpin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -139,19 +135,39 @@ public class Checkout extends javax.swing.JFrame {
         String pin = Arrays.toString(txtpin.getPassword());
          pin = pin.replaceAll("\\D", "");
         byte[] cmdcreateSig = {(byte) 0xA0, (byte) 0x16, (byte) 0x01, (byte) 0x00};
-        String sotien = txtMoney.getText();
-        String st = Integer.toHexString(Integer.valueOf(sotien));
+        int sotien=0;
+        if(rdLuot.isSelected()){
+            sotien+=7;
+            
+        }
+        if(rdThang.isSelected()){
+                sotien+=100;
+            }
+        
+        String st = Integer.toHexString(sotien);
         String mxt = busdForm.randomString(10);
         String arraysend= mxt.concat(pin);
         byte[] chuoiky = arraysend.getBytes();
         thebus.sendAPDUtoApplet(cmdcreateSig,chuoiky);
         byte[] sigbuf = thebus.resAPDU.getData();
+        if(pin.length()==0){
+            btnThanhtoan.disable();
+        }else{
+            btnThanhtoan.enable();
+            if(!rdLuot.isSelected()&&!rdThang.isSelected()){
+                JOptionPane.showMessageDialog(this, "Bạn chưa chọn dịch vụ để thanh toán");
+                txtpin.setText("");
+                txtpin.disable();
+            }else{
+                txtpin.enable();
+            }
+        }
         if(sigbuf.length ==1|| thebus.resAPDU.getSW1()!= 0x90){
             JOptionPane.showMessageDialog(this, "Giao dịch không thành công. Mã PIN không đúng");
         }else{
             boolean result = busdForm.verify(busdForm.rsaPubKey, mxt.getBytes(), sigbuf);
             if(result == true){
-            byte[] cmdupdate = {(byte) 0xA0, (byte) 0x16, (byte) 0x02, (byte) 0x00};
+            byte[] cmdupdate = {(byte) 0xA0, (byte) 0x17, (byte) 0x02, (byte) 0x00};
             byte[] updatebalance = new byte[st.length()];
             if(st.length() == 1){
                 updatebalance[0]= Byte.valueOf(st,16);
@@ -167,17 +183,14 @@ public class Checkout extends javax.swing.JFrame {
                 updatebalance[1] = Byte.valueOf(tach[1],16);
                 updatebalance[2] = Byte.valueOf(tach[2],16);
             }
-            if(st.length() == 4){
-                String[] tach = st.split("",4);
-                updatebalance[0] = Byte.valueOf(tach[0],16);
-                updatebalance[1] = Byte.valueOf(tach[1],16);
-                updatebalance[2] = Byte.valueOf(tach[2],16);
-                updatebalance[3] = Byte.valueOf(tach[3],16);
-            }
+            
             thebus.sendAPDUtoApplet(cmdupdate, updatebalance);
             byte[] res= thebus.resAPDU.getData();
             if (res[0] == 0x01){
+                if(rdThang.isSelected())
+                BusForm.info.setLoaithe("Vip");
                 JOptionPane.showMessageDialog(this, "Giao dịch thành công!\nHãy kết nối lại thẻ.");
+                
                 setVisible(false);
                 busdForm.cardready = false;
             }else{
@@ -228,11 +241,10 @@ public class Checkout extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private custom.MyButton btnThanhtoan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private custom.TextField txtMoney;
+    private javax.swing.JRadioButton rdLuot;
+    private javax.swing.JRadioButton rdThang;
     private custom.PasswordField txtpin;
     // End of variables declaration//GEN-END:variables
 }
